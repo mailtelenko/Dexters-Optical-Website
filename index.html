@@ -1,58 +1,86 @@
 <!DOCTYPE html>
-<html>
-
-<head>
+<html lang="en">
+  <head>
     <title>Dexter's Optical</title>
 
     <!-- Link CSS -->
     <link href="css.css" rel="stylesheet" />
 
     <!-- OSMB -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    />
     <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
     <script src="https://cdn.osmbuildings.org/classic/0.2.2b/OSMBuildings-Leaflet.js"></script>
 
     <!-- Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <!-- Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+    name="description"
+    content="Dexter's Optical is an independent optical producing high-quality eyewear in Toronto, Ontario.">  
 
 </head>
 
-<body>
+  <body>
     <div class="card" id="content">
-        <div class="header">
-            <h1>Dexter's Optical</h1>
-            <div id="map"></div>
-            <p class="banner">Due to COVID-19 all visits are by appointment only.</p>
-            <div id="contact">
-                <div>🗺️ 2075 Bayview Ave, Toronto, ON M4N 3M5</div>
-                <div>📞 (416) 544-9333</div>
-            </div>
-        </div>
-        <p id="footer">© Dexter's Optical Inc. 2020</p>
+      <h1>Dexter's Optical</h1>
+      <div id="map"></div>
+      <p class="banner">Due to COVID-19 all visits are by appointment only.</p>
+      <table id="contact">
+        <colgroup>
+          <col span="1" style="width: 20%"/>
+          <col span="1" />
+          <col span="1" />
+          <col span="1" style="width: 20%"/>
+        </colgroup>
+        <tbody>
+          <tr id="address">
+            <td></td>
+            <td class="icon">🗺️</td>
+            <td>2075 Bayview Ave<br />Toronto, ON M4N 3M5</td>
+            <td></td>
+          </tr>
+          <tr id="phone">
+            <td></td>
+            <td class="icon">📞</td>
+            <td>(416) 544-9333</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      <div id="footer">© Dexter's Optical Inc. 2023</div>
     </div>
-</body>
+  </body>
 
-<!-- Scripts -->
+  <!-- Scripts -->
 
-<script>
-    var map = new L.Map('map');
+  <script>
+    var map = new L.Map("map");
 
-    map.setView([43.7215, -79.3765], 16, false);
+    map.setView([43.7215, -79.3765], 14, false);
 
-    new L.TileLayer('https://a.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-
-        attribution: '',
-
-        maxZoom: 18,
-
-        maxNativeZoom: 20
-
+    new L.TileLayer("https://a.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: "",
+      maxZoom: 18,
+      maxNativeZoom: 20,
     }).addTo(map);
 
     var marker = L.marker([43.7215, -79.3765]).addTo(map);
 
-    var osmb = new OSMBuildings(map).load('https://{s}.data.osmbuildings.org/0.2/anonymous/tile/{z}/{x}/{y}.json');
-</script>
-
+    // Buildings are cool but not necessary
+    // var osmb = new OSMBuildings(map).load(
+    //   "https://{s}.data.osmbuildings.org/0.2/anonymous/tile/{z}/{x}/{y}.json"
+    // );
+  </script>
 </html>
