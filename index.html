@@ -36,7 +36,7 @@
     <div class="card" id="content">
       <h1>Dexter's Optical</h1>
       <div id="map"></div>
-      <p class="banner">Due to COVID-19 all visits are by appointment only.</p>
+      <p class="banner">Temporarily closed, relocating.</p>
       <table id="contact">
         <colgroup>
           <col span="1" style="width: 20%"/>
@@ -48,7 +48,7 @@
           <tr id="address">
             <td></td>
             <td class="icon">🗺️</td>
-            <td>2075 Bayview Ave<br />Toronto, ON M4N 3M5</td>
+            <td>4025 Yonge Street, R-105<br />Toronto, ON M2P 2E3</td>
             <td></td>
           </tr>
           <tr id="phone">
@@ -68,7 +68,7 @@
   <script>
     var map = new L.Map("map");
 
-    map.setView([43.7215, -79.3765], 14, false);
+    map.setView([43.7446, -79.4064], 14, false);
 
     new L.TileLayer("https://a.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution: "",
@@ -76,7 +76,7 @@
       maxNativeZoom: 20,
     }).addTo(map);
 
-    var marker = L.marker([43.7215, -79.3765]).addTo(map);
+    var marker = L.marker([43.7446, -79.4064]).addTo(map);
 
     // Buildings are cool but not necessary
     // var osmb = new OSMBuildings(map).load(
